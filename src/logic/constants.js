@@ -24,3 +24,13 @@ export const FIRE_ANDROID_CLIENT_ID =
   '614653224199-44k569f6362ot1nf3mjp1a2uniq7iabf.apps.googleusercontent.com';
 export const FIRE_ANDROID_APP_ID =
   '1:614653224199:android:5c362daa92c33e2a9c11a2';
+export const THEME_CONFIG = {
+  comedy: {
+    backgroundColor: '#F6F9FA',
+  },
+  horror: {
+    backgroundColor: 'black',
+  }
+};
+
+export const USED_THEME = "comedy"

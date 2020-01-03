@@ -5,44 +5,17 @@ import styles from "../screens/styles/A03Style";
 import * as Utils from "../logic/utils";
 
 const A03Item = props => {
-  const [currentTime, setTime] = useState(0);
-  const { data, onPress, timeRead } = props;
+  const { data, onPress } = props;
   const {
-    id: bookId,
-    title,
-    avatar: bookCover,
-    authorName,
-    speakerName,
-    read,
-    duration
+    name: title,
+    cover: bookCover,
+    author: authorName
   } = data;
 
-  const currentBookRead = timeRead[bookId];
-
-  const getCurrentPosition = bookTimeData => {
-    let currentPosition = 0;
-    if (bookTimeData) {
-      Object.keys(bookTimeData).forEach(function(item) {
-        currentPosition += bookTimeData[item].time;
-      });
-    }
-    return currentPosition;
-  };
-
-  useEffect(() => {
-    setTime(read);
-  }, []);
-
-  useEffect(() => {
-    const bookReadTime = getCurrentPosition(currentBookRead) || read || 0;
-    setTime(bookReadTime);
-  }, [currentBookRead]);
-
-  const totalTime = Utils.getFormatTimeSecond(duration);
-  const currentRead = currentTime < totalTime ? currentTime : totalTime;
-  const percentRead = Math.ceil((currentRead / totalTime) * 100) || 0;
-  const flexRead = currentRead / totalTime;
-  const flexLeft = (totalTime - currentRead) / totalTime;
+ 
+  const percentRead =  0;
+  const flexRead = 1
+  const flexLeft = 1
  
   return (
     <View style={styles.itemWrapper}>
@@ -63,23 +36,8 @@ const A03Item = props => {
             numberOfLines={3}
             style={styles.bookName}
           >
-            {title} - {authorName} - Giọng đọc {speakerName}
+            {title} - {authorName}
           </Text>
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <Text style={styles.readPercent}>{percentRead}%</Text>
-          <View style={{ padding: 10 }}>
-            <View style={styles.processWrap}>
-              <View
-                style={{
-                  flex: flexRead,
-                  backgroundColor: "#EF7225",
-                  borderRadius: 1
-                }}
-              />
-              <View style={{ flex: flexLeft }} />
-            </View>
-          </View>
         </View>
       </TouchableOpacity>
     </View>

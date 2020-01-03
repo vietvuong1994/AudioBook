@@ -18,6 +18,10 @@ import RNSecureStorage from 'rn-secure-storage';
 import * as constants from '../logic/constants';
 import FirebaseConfig from '../logic/firebaseInfo';
 import firebase from 'react-native-firebase';
+const {THEME_CONFIG, USED_THEME} = constants;
+const {backgroundColor} = THEME_CONFIG[USED_THEME];
+
+const mockJSON = require("../Mock/category.json")
 
 class A03 extends Component {
   constructor(props) {
@@ -27,23 +31,29 @@ class A03 extends Component {
 
   componentDidMount() {
     this.props.getLibrary();
-    firebase.initializeApp(FirebaseConfig);
+    console.log('====================================');
+    console.log(mockJSON);
+    console.log('====================================');
+    // // if (!firebase.apps.length) {
+    // firebase.initializeApp(FirebaseConfig);
+    // // }
+    // var docRef = firebase.firestore().collection('full_data');
+    // docRef
+    //   .where('category', 'array-contains', 'Children')
+    //   .get()
+    //   .then(snapshot => {
+    //     if (snapshot.empty) {
+    //       console.log('No matching documents.');
+    //       return;
+    //     }
 
-    var docRef = firebase.firestore().collection('book_data').doc('0');
-
-    docRef
-      .get()
-      .then(function(doc) {
-        if (doc.exists) {
-          console.log('Document data:', doc.data());
-        } else {
-          // doc.data() will be undefined in this case
-          console.log('No such document!');
-        }
-      })
-      .catch(function(error) {
-        console.log('Error getting document:', error);
-      });
+    //     snapshot.forEach(doc => {
+    //       console.log(JSON.stringify(doc.data()));
+    //     });
+    //   })
+    //   .catch(err => {
+    //     console.log('Error getting documents', err);
+    //   });
   }
 
   componentDidUpdate(prevProps) {
@@ -78,6 +88,10 @@ class A03 extends Component {
 
   renderItem = data => {
     const {time} = this.props;
+    // console.log('====================================');
+    // console.log(data);
+    // console.log('====================================');
+    // return null
     return (
       <A03Item
         data={data}
@@ -120,13 +134,12 @@ class A03 extends Component {
           </TouchableOpacity>
         </View>
 
-        <View
-          style={{paddingHorizontal: 10, flex: 1, backgroundColor: '#F6F9FA'}}>
+        <View style={{paddingHorizontal: 10, flex: 1, backgroundColor}}>
           <FlatList
-            data={books}
+            data={mockJSON}
             numColumns={2}
             refreshing={false}
-            extraData={books}
+            extraData={mockJSON}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({item}) => this.renderItem(item)}
             ListHeaderComponent={

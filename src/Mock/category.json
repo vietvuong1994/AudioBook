@@ -1,79 +1,480 @@
-{
-    "body": 
-    {
-        "content": [
-            {
-                "id": 1,
-                "name": "Truyện ngắn",
-                "about": "Truyện ngắn"
-            },
-            {
-                "id": 2,
-                "name": "Tiểu Thuyết",
-                "about": "Tiểu thuyết là một thể loại văn xuôi có hư cấu, thông qua nhân vật, hoàn cảnh, sự việc để phản ánh bức tranh xã hội rộng lớn và những vấn đề của cuộc sống con người, biểu hiện tính chất tường thuật, tính chất kể chuyện bằng ngôn ngữ văn xuôi theo những chủ đề xác định"
-            },
-            {
-                "id": 3,
-                "name": "Văn học Việt Nam",
-                "about": "Văn học Việt Nam"
-            },
-           
-            {
-                "id": 4,
-                "name": "Văn học nước ngoài",
-                "about": "Văn học nước ngoài"
-            },
-            {
-                "id": 5,
-                "name": "Văn học cổ điển",
-                "about": "Văn học cổ điển"
-            },
-            {
-                "id": 6,
-                "name": "Truyện cổ tích",
-                "about": "Truyện cổ tích"
-            },
-            {
-                "id": 7,
-                "name": "Sách thiếu nhi",
-                "about": "Sách thiếu nhi"
-            },
-            {
-                "id": 8,
-                "name": "Sách kỹ năng sống",
-                "about": "Sách kỹ năng sống"
-            },
-            {
-                "id": 9,
-                "name": "Sách lịch sử",
-                "about": "Sách lịch sử"
-            },
-            {
-                "id": 10,
-                "name": "Khác",
-                "about": "Khác"
-            }
+[
+    { 
+        "summary":"Also known as “The Children’s Homer,” this is Irish writer Padraic Colum’s\nretelling of the events of Homer’s Iliad and Odyssey for young people. Colum’s\nrich, evocative prose narrates the travails of Odysseus, King of Ithaca: his\nexperiences fighting the Trojan War, and his ten years’ journey home to his\nfaithful wife Penelope and his son Telemachus.\n\n\n\n\n\nTHE ADVENTURES OF ODYSSEUS AND THE TALE OF TROY\n\n\n\n[Illustration]\n\n\n\nTHE ADVENTURES OF ODYSSEUS AND THE TALE OF TROY\n\n\n\nBY PADRAIC COLUM\n\n\n\n[Illustration]\n\n\n\nPRESENTED BY\n\n\n\nWILLY POGANY\n\n\n\nTHE MACMILLAN COMPANY NEW YORK\n\n\n\nCOPYRIGHT, 1918, BY THE MACMILLAN COMPANY. SET UP AND ELECTROTYPED. PUBLISHED\nNOVEMBER, 1918.\n\n\n\n[Illustration]\n\n\n\nREPRINTED JUNE, OCTOBER, 1919; OCTOBER, 1920; AUGUST, 1922; MARCH, 1923; MAY,\n1924; JUNE, 1925; MARCH, 1926; DECEMBER, 1926; AUGUST, 1927.\n\n\n\nNorwood Press: J.S. Cushing Co. Berwick & Smith Co. Norwood, Massachusetts,\nU.S.A.\n\n\n\nFOR HUGHIE AND PETER\n\n\n\nTHIS TELLING OF THE WORLD'S GREATEST STORY\n\n\n\nBECAUSE THEIR IMAGINATIONS\n\n\n\nRISE TO DEEDS AND WONDERS\n\n\n\n[Illustration]\n\n\n\nCONTENTS\n\n\n\nPART I\n\n\n\nHOW TELEMACHUS THE SON OF ODYSSEUS WAS MOVED TO GO ON A VOYAGE IN SEARCH OF\nHIS FATHER AND HOW HE HEARD FROM MENELAUS AND HELEN THE TALE OF TROY 1\n\n\n\nPART II\n\n\n\nHOW ODYSSEUS LEFT CALYPSO'S ISLAND AND CAME TO THE LAND OF THE PHAEACIANS; HOW\nHE TOLD HE FARED WITH THE CYCLÔPES AND WENT PAST THE TERRIBLE SCYLLA AND\nCHARYBDIS AND CAME TO THE ISLAND OF THRINACIA WHERE HIS MEN SLAUGHTERED THE\nCATTLE OF THE SUN; HOW HE WAS GIVEN A SHIP BY THE PHAEACIANS AND CAME TO HIS\nOWN LAND; HOW HE OVERTHREW THE WOOERS WHO WASTED HIS SUBSTANCE AND CAME TO\nREIGN AGAIN AS KING OF ITHAKA... [Continue reading book\n>>](/download/text/Adventures-of-Odysseus-and-the-Tales-of-Troy.txt)\n\n",
+        "author":"Padraic Colum",
+        "category":[ 
+           "Adventure",
+           "Children",
+           "Classics (antiquity)",
+           "Fiction",
+           "Languages",
+           "Literature",
+           "Myths/Legends",
+           "War stories"
         ],
-        "first": true,
-        "last": true,
-        "number": 0,
-        "numberOfElements": 0,
-        "pageable": {
-            "pageNumber": 0,
-            "pageSize": 20,
-            "paged": true,
-            "sort": {
-                "sorted": true,
-                "unsorted": true
-            },
-            "unpaged": true
-        },
-        "size": 0,
-        "sort": {
-            "sorted": true,
-            "unsorted": true
-        },
-        "totalElements": 0,
-        "totalPages": 0
-    }
-}
+        "rate":"5",
+        "url":"http://www.loyalbooks.com/book/Adventures-of-Odysseus-and-The-Tales-of-Troy",
+        "media_data":[ 
+           { 
+              "name":"01 – Part 1, Chapters 1 and 2",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_01_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"02 – Part 1, Chapter 3",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_02_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"03 – Part 1, Chapter 4",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_03_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"04 – Part 1, Chapters 5 and 6",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_04_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"05 – Part 1, Chapter 7",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_05_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"06 – Part 1, Chapters 8 and 9",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_06_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"07 – Part 1, Chapters 10 and 11",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_07_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"08 – Part 1, Chapter 12",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_08_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"09 – Part 1, Chapter 13",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_09_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"10 – Part 1, Chapter 14",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_10_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"11 – Part 1, Chapter 15",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_11_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"12 – Part 1, Chapters 16 and 17",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_12_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"13 – Part 1, Chapters 18 and 19",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_13_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"14 – Part 1, Chapters 20 and 21",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_14_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"15 – Part 1, Chapters 22 and 23",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_15_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"16 – Part 2, Chapter 1",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_16_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"17 – Part 2, Chapter 2",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_17_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"18 – Part 2, Chapter 3",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_18_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"19 – Part 2, Chapter 4",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_19_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"20 – Part 2, Chapter 5",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_20_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"21 – Part 2, Chapter 6",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_21_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"22 – Part 2, Chapter 7",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_22_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"23 – Part 2, Chapter 8",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_23_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"24 – Part 2, Chapter 9",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_24_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"25 – Part 2, Chapter 10",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_25_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"26 – Part 2, Chapter 11",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_26_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"27 – Part 2, Chapter 12",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_27_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"28 – Part 2, Chapters 13 and 14",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_28_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"29 – Part 2, Chapter 15 and 16",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_29_colum_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"30 – Part 2, Chapter 17",
+              "mp3":"http://www.archive.org/download/adventuresofodysseus_etk_librivox/adventuresofodysseus_30_colum_64kb.mp3",
+              "free":true
+           }
+        ],
+        "cover":"http://www.loyalbooks.com/image/detail/The-Adventures-of-Odysseus-and-the-Tale-of-Troy.jpg",
+        "name":"The Adventures of Odysseus and the Tale of Troy",
+        "cover_small":"http://www.loyalbooks.com/image/layout2/The-Adventures-of-Odysseus-and-the-Tale-of-Troy.jpg"
+     },
+     { 
+        "summary":"How do you tell apart a parrot from a carrot? A plover from a clover? A bay\nfrom a jay? Although there are several ways of differentiating, R. W. Wood’s\nuse of pun and rhyme is one of the most entertaining!\n\n\n\n\n\n\n\n\n\nHow To Tell The Birds From The Flowers.\n\n\n\nA Manual of Flornithology for Beginners.\n\n\n\n[Illustration]\n\n\n\nVerses and Illustrations By Robert Williams Wood.\n\n\n\nPublished by Paul Elder and Company San Francisco and New York.\n\n\n\n\n\nCopyright 1907 By Paul Elder and Company\n\n\n\n[Illustration]\n\n\n\n\n\nContents.\n\n\n\nPage. The Bird. The Burdock. 1. The Clover. The Plover. 2. The Crow. The\nCrocus. 3. The Rue. The Rooster. 4. The Parrot. The Carrot. 5. The Pea. The\nPewee. 6. The Pelican. The Panicle. 7. The Hen. The Lichen. 8. The Hawk. The\nHollyhock. 9. The Cow Bird. The Cowslip. 10. A Sparrer. Asparagus... [Continue\nreading book >>](/download/text/How-to-Tell-the-Birds-from-the-Flowers-by-\nRobert-Williams-Wood.txt)\n\n",
+        "author":"Robert Williams Wood",
+        "category":[ 
+           "Children",
+           "Comedy",
+           "Humor",
+           "Literature",
+           "Poetry",
+           "Science"
+        ],
+        "rate":null,
+        "url":"http://www.loyalbooks.com/book/how-to-tell-the-birds-from-the-flowers-by-robert-williams-wood",
+        "media_data":[ 
+           { 
+              "name":"How to Tell the Birds from the Flowers",
+              "mp3":"http://www.archive.org/download/birds_from_flowers_librivox/birds_flowers_wood_64kb.mp3",
+              "free":true
+           }
+        ],
+        "cover":"http://www.loyalbooks.com/image/detail/How-to-Tell-the-Birds-from-th.jpg",
+        "name":"How to Tell the Birds from the Flowers",
+        "cover_small":"http://www.loyalbooks.com/image/layout2/How-to-Tell-the-Birds-from-th.jpg"
+     },
+     { 
+        "summary":"\n\n\n\nHIS TALE\n\n\n\nBy Owen Wister\n\n\n\nIllustrations by John Stewardson\n\n\n\nSECOND EDITION\n\n\n\nPhiladelphia J·B·LIPPINCOTT COMPANY 1895\n\n\n\n\n\n[Illustration: ·COPYRIGHT·1892·\n\n\n\n·BY·J·B·LIPPINCOTT·COMPANY·\n\n\n\nPRINTED·BY·J·B·LIPPINCOTT·COMPANY\n\n\n\n·PHILADELPHIA·USA·]\n\n\n\n\n\nTO MY ANCIENT PLAYMATES IN APPIAN WAY CAMBRIDGE THIS LIKELY STORY IS DEDICATED\nFOR REASONS BEST KNOWN TO THEMSELVES\n\n\n\n\n\nPreface\n\n\n\nWhen Betsinda held the Rose And the Ring decked Giglio's finger Thackeray!\n'twas sport to linger With thy wise, gay hearted prose. Books were merry,\ngoodness knows! When Betsinda held the Rose... [Continue reading book\n>>](/download/text/Dragon-of-Wantley-by-Owen-Wister.txt)\n\n",
+        "author":"Owen Wister",
+        "category":[ 
+           "Adventure",
+           "Animals",
+           "Children",
+           "Comedy",
+           "Fairy tales",
+           "Fantasy",
+           "Fiction",
+           "Historical Fiction",
+           "Holiday",
+           "Humor",
+           "Literature",
+           "Myths/Legends",
+           "Romance",
+           "Satire",
+           "Short stories",
+           "Teen/Young adult"
+        ],
+        "rate":"4",
+        "url":"http://www.loyalbooks.com/book/Dragon-of-Wantley-by-Owen-Wister",
+        "media_data":[ 
+           { 
+              "name":"00 Dedication And First And Second Prefaces",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_00_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"01 Chapter 01 How Sir Godfrey Came To Lose His Temper",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_01_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"02 Chapter 02 How His Daughter, Miss Elaine, Behaved In Consequence",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_02_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"03 Chapter 03 Reveals The Dragon In His Den",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_03_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"04 Chapter 04 Tells All About Him",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_04_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"05 Chapter 05 In Which The Hero Makes His First Appearance & Is At Once Locked Up",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_05_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"06 Chapter 06 Miss Elaine Loses Her Heart & Finds Something Of The Greatest Importance",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_06_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"07 Chapter 07 Show What Curious Things You May See, If You Don't Go To Bed When You Are Sent",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_07_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"08 Chapter 08 Contains A Dilemma With Two Simply Egregious Horns",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_08_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"09 Chapter 09 Leaves Much Room For Guessing About Chapter Ten",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_09_wister_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"10 Chapter 10 The Great White Christmas At Wantley",
+              "mp3":"http://www.archive.org/download/dragon_wantley_1204_librivox/dragonwantley_10_wister_64kb.mp3",
+              "free":true
+           }
+        ],
+        "cover":"http://www.loyalbooks.com/image/detail/The-Dragon-of-Wantley.jpg",
+        "name":"The Dragon of Wantley",
+        "cover_small":"http://www.loyalbooks.com/image/layout2/The-Dragon-of-Wantley.jpg"
+     },
+     { 
+        "summary":"",
+        "author":"J. M. Barrie",
+        "category":[ 
+           "Adventure",
+           "Children",
+           "Fiction",
+           "Literature"
+        ],
+        "rate":null,
+        "url":"http://www.loyalbooks.com/book/Little-White-Bird-or-Adventures-in-Kensingto",
+        "media_data":[ 
+           { 
+              "name":"David and I set off on a Journey",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_01_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Little Nursery Governess",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_02_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Her Marriage, her Clothes, her Appetite and an inventory of her Furniture",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_03_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"A Night-Piece",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_04_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Fight for Timothy",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_05_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"A Shock",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_06_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Last of Timothy",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_07_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Inconsiderate Waiter",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_08_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"A Confirmed Spinster",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_09_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Sporting Reflections",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_10_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Runaway Perambulator",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_11_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Pleasantest Club in London",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_12_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Grand Tour of the Gardens",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_13_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Peter Pan",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_14_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Thrush's Nest",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_15_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Lock-Out Time",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_16_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Little House",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_17_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Peter's Goat",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_18_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"An Interloper",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_19_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"David and Porthos Compared",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_20_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"William Paterson",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_21_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Joey",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_22_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Pilkington's",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_23_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"Barbara",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_24_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Cricket Match",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_25_barrie_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"The Dedication",
+              "mp3":"http://www.archive.org/download/little_white_bird_1502_librivox/littlewhitebird_26_barrie_64kb.mp3",
+              "free":true
+           }
+        ],
+        "cover":"http://www.loyalbooks.com/image/ui/default-book-large.gif",
+        "name":"Little White Bird",
+        "cover_small":"http://www.loyalbooks.com/image/ui/default-book-large.gif"
+     },
+     { 
+        "summary":"",
+        "author":"Lucy Fitch Perkins",
+        "category":[ 
+           "Children",
+           "Fiction",
+           "Literature",
+           "Teen/Young adult"
+        ],
+        "rate":null,
+        "url":"http://www.loyalbooks.com/book/Dutch-Twins",
+        "media_data":[ 
+           { 
+              "name":"00 - Kit and Kat",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_00_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"01 - The Day They Went Fishing",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_01_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"02 - Market Day With Father",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_02_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"03 - Mother's Day",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_03_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"04 - One Sunday",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_04_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"05 - The Day They Drove The Milk Cart",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_05_perkins_64kb.mp3",
+              "free":true
+           },
+           { 
+              "name":"06 - The Day They Got Their Skates",
+              "mp3":"http://www.archive.org/download/dutch_twins_1001_librivox/dutchtwins_06_perkins_64kb.mp3",
+              "free":true
+           }
+        ],
+        "cover":"http://www.loyalbooks.com/image/detail/Dutch-Twins.jpg",
+        "name":"The Dutch Twins",
+        "cover_small":"http://www.loyalbooks.com/image/layout2/Dutch-Twins.jpg"
+     }
+]

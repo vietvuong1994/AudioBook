@@ -36,6 +36,7 @@
 		C90A25D0C5904F45830A220C /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9E284CE1E5C46D08F7CE8CA /* FontAwesome5_Brands.ttf */; };
 		D0B4ECE4E7404915920E4042 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1888E92E62B42209BBBB6FB /* EvilIcons.ttf */; };
 		F88D8791828F4253881DD36E /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 809B9292D9EA42CF98E51E51 /* SimpleLineIcons.ttf */; };
+		FC380A5F23BDE35000E179CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC380A5E23BDE35000E179CB /* GoogleService-Info.plist */; };
 		FCDFAF9223B494EF00EC1C09 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFAF9123B494EF00EC1C09 /* dummy.swift */; };
 		FCDFAFA423B4958700EC1C09 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAF9423B4958600EC1C09 /* Fontisto.ttf */; };
 		FCDFAFA523B4958700EC1C09 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAF9523B4958600EC1C09 /* Octicons.ttf */; };
@@ -53,7 +54,6 @@
 		FCDFAFB123B4958700EC1C09 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAFA123B4958600EC1C09 /* EvilIcons.ttf */; };
 		FCDFAFB223B4958700EC1C09 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAFA223B4958600EC1C09 /* SimpleLineIcons.ttf */; };
 		FCDFAFB323B4958700EC1C09 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAFA323B4958600EC1C09 /* MaterialIcons.ttf */; };
-		FCDFAFB523B4997E00EC1C09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCDFAFB423B4997D00EC1C09 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +117,7 @@
 		DD50A90FD72A415CB0A5E1C8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FC380A5E23BDE35000E179CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCDFAF9023B494EE00EC1C09 /* AudioBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCDFAF9123B494EF00EC1C09 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		FCDFAF9423B4958600EC1C09 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		FCDFAFA123B4958600EC1C09 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		FCDFAFA223B4958600EC1C09 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		FCDFAFA323B4958600EC1C09 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		FCDFAFB423B4997D00EC1C09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCDFAFD723B4BF3B00EC1C09 /* AudioBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AudioBook.entitlements; path = AudioBook/AudioBook.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,8 +195,8 @@
 		13B07FAE1A68108700A75B9A /* AudioBook */ = {
 			isa = PBXGroup;
 			children = (
+				FC380A5E23BDE35000E179CB /* GoogleService-Info.plist */,
 				FCDFAFD723B4BF3B00EC1C09 /* AudioBook.entitlements */,
-				FCDFAFB423B4997D00EC1C09 /* GoogleService-Info.plist */,
 				FCDFAF9323B4958600EC1C09 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -493,7 +493,7 @@
 				FCDFAFA823B4958700EC1C09 /* FontAwesome5_Brands.ttf in Resources */,
 				FCDFAFAD23B4958700EC1C09 /* FontAwesome5_Solid.ttf in Resources */,
 				FCDFAFB223B4958700EC1C09 /* SimpleLineIcons.ttf in Resources */,
-				FCDFAFB523B4997E00EC1C09 /* GoogleService-Info.plist in Resources */,
+				FC380A5F23BDE35000E179CB /* GoogleService-Info.plist in Resources */,
 				92742BA309BF4216829EDD27 /* MaterialCommunityIcons.ttf in Resources */,
 				FCDFAFB323B4958700EC1C09 /* MaterialIcons.ttf in Resources */,
 				65143DD87369496EA0DB89A2 /* MaterialIcons.ttf in Resources */,
