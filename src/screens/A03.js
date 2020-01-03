@@ -88,9 +88,7 @@ class A03 extends Component {
 
   renderItem = data => {
     const {time} = this.props;
-    // console.log('====================================');
-    // console.log(data);
-    // console.log('====================================');
+    
     // return null
     return (
       <A03Item
