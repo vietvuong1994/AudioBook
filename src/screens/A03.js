@@ -16,44 +16,21 @@ import * as actions from '../logic/actions';
 import {connect} from 'react-redux';
 import RNSecureStorage from 'rn-secure-storage';
 import * as constants from '../logic/constants';
-import FirebaseConfig from '../logic/firebaseInfo';
-import firebase from 'react-native-firebase';
-const {THEME_CONFIG, USED_THEME} = constants;
-const {backgroundColor} = THEME_CONFIG[USED_THEME];
-
-const mockJSON = require("../Mock/category.json")
+import FirebaseService from '../logic/firestoreService';
+// const {THEME_CONFIG, USED_THEME} = constants;
+// const {backgroundColor} = THEME_CONFIG[USED_THEME];
 
 class A03 extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      bookData: [],
+    };
   }
 
   componentDidMount() {
     this.props.getLibrary();
-    console.log('====================================');
-    console.log(mockJSON);
-    console.log('====================================');
-    // // if (!firebase.apps.length) {
-    // firebase.initializeApp(FirebaseConfig);
-    // // }
-    // var docRef = firebase.firestore().collection('full_data');
-    // docRef
-    //   .where('category', 'array-contains', 'Children')
-    //   .get()
-    //   .then(snapshot => {
-    //     if (snapshot.empty) {
-    //       console.log('No matching documents.');
-    //       return;
-    //     }
-
-    //     snapshot.forEach(doc => {
-    //       console.log(JSON.stringify(doc.data()));
-    //     });
-    //   })
-    //   .catch(err => {
-    //     console.log('Error getting documents', err);
-    //   });
+    this.getListBook();
   }
 
   componentDidUpdate(prevProps) {
@@ -80,6 +57,14 @@ class A03 extends Component {
     }
   };
 
+  getListBook = async () => {
+    try {
+      const bookData = await FirebaseService.getBookList(10, "Children");
+      this.setState({bookData});
+    } catch (e) {
+      __DEV__ && console.log('get book data: ', e);
+    }
+  };
   navToBookDetail = async data => {
     this.props.navigation.navigate('A10', {
       bookData: data,
@@ -88,8 +73,6 @@ class A03 extends Component {
 
   renderItem = data => {
     const {time} = this.props;
-    
-    // return null
     return (
       <A03Item
         data={data}
@@ -105,6 +88,7 @@ class A03 extends Component {
 
   render() {
     const {books, isDrawerOpen, isBottomSheetOpen} = this.props;
+    const {bookData} = this.state;
     return (
       <SafeAreaView
         style={styles.container}
@@ -132,12 +116,13 @@ class A03 extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={{paddingHorizontal: 10, flex: 1, backgroundColor}}>
+        <View
+          style={{paddingHorizontal: 10, flex: 1, backgroundColor: '#F6F9FA'}}>
           <FlatList
-            data={mockJSON}
+            data={bookData}
             numColumns={2}
             refreshing={false}
-            extraData={mockJSON}
+            extraData={bookData}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({item}) => this.renderItem(item)}
             ListHeaderComponent={

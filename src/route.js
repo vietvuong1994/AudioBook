@@ -114,12 +114,12 @@ export const AuthStack = createStackNavigator(
 const RootNavigator = createAppContainer(
   createSwitchNavigator(
     {
-      // AuthLoading: AuthLoadingScreen,
+      AuthLoading: AuthLoadingScreen,
       // AuthStack,
       MainStack
     },
     {
-      initialRouteName: "MainStack"
+      initialRouteName: "AuthLoading"
     }
   )
 );

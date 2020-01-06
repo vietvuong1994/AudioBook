@@ -22,7 +22,6 @@ import NetInfo from '@react-native-community/netinfo';
 import SplashScreen from 'react-native-splash-screen';
 import RNFS from 'react-native-fs';
 import DeviceInfo from 'react-native-device-info';
-import {NavigationActions} from 'react-navigation';
 
 class NavigationWrapper extends Component {
   constructor(props) {
@@ -41,7 +40,6 @@ class NavigationWrapper extends Component {
 
   async componentDidMount() {
     console.warn(DeviceInfo.getUniqueID());
-
     StatusBar.setBarStyle('dark-content');
     SplashScreen.hide();
     this.unsubscribe = NetInfo.addEventListener(state => {
