@@ -4,31 +4,70 @@ import {
   FETCH_LIBRARY_ERROR,
 } from './actionsTypes';
 import openConnection from '../realm';
+import FirebaseService from '../firestoreService';
+
+const fetchLibrary = () => {
+  return {
+    type: FETCH_LIBRARY,
+  };
+};
+
+const fetchLibraryFail = error => {
+  return {
+    type: FETCH_LIBRARY_ERROR,
+    error,
+  };
+};
 
 const getLocalBooks = async () => {
   const realm = await openConnection();
   return realm.objects('Book').filtered(`isDownloaded = true`);
 };
 
-const getOnlineBook = async () => {
-  
-}
+const getOnlineBook = async ({limit, lastId, category, refresh}) => {
+  const onlineBook = await FirebaseService.getBookList({
+    limit,
+    category,
+    lastId: !refresh ? lastId : null,
+  });
+  return onlineBook;
+};
 
-const fetchLibraryData = (limit, lastId, category, refresh ) => {
+const fetchLibraryData = (limit, lastId, category, refresh) => {
   return async dispatch => {
-    const localBooks = await getLocalBooks();
-    if (localBooks.length == 0) {
-      dispatch({
-        type: FETCH_LIBRARY_SUCCESS,
-        books,
-        isFetchedAllData: false,
-      });
-    } else {
-      dispatch({
-        type: FETCH_LIBRARY_SUCCESS,
-        books: localBooks,
-        isFetchedAllData: true,
-      });
+    try {
+      dispatch(fetchLibrary());
+      const localBooks = await getLocalBooks();
+      if (localBooks.length == 0) {
+        const onlineBookData = await getOnlineBook({
+          limit,
+          lastId,
+          category,
+          refresh,
+        });
+        const {data: onlineBook, lastDoc} = onlineBookData;
+        dispatch({
+          type: FETCH_LIBRARY_SUCCESS,
+          books: onlineBook,
+          isFetchedAllData: onlineBook.length < limit,
+          // lastId: onlineBook[onlineBook.length - 1]
+          //   ? onlineBook[onlineBook.length - 1].book_id
+          //   : null,
+          lastId: lastDoc ? lastDoc : null,
+          refresh,
+        });
+      } else {
+        dispatch({
+          type: FETCH_LIBRARY_SUCCESS,
+          books: localBooks,
+          isFetchedAllData: true,
+          lastId: null,
+          refresh: true,
+        });
+      }
+    } catch (e) {
+      console.log('[ACTION] GET BOOK ERROR: ', e);
+      dispatch(fetchLibraryFail(e));
     }
   };
 };

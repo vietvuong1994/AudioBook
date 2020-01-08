@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   Text,
+  ActivityIndicator,
 } from 'react-native';
 import TrackPlayer from 'react-native-track-player';
 import styles from './styles/A03Style';
@@ -29,8 +30,8 @@ class A03 extends Component {
   }
 
   componentDidMount() {
-    this.props.getLibrary();
-    this.getListBook();
+    // this.props.getLibrary(10, 'Children', true);
+    // this.getListBook();
   }
 
   componentDidUpdate(prevProps) {
@@ -59,7 +60,10 @@ class A03 extends Component {
 
   getListBook = async () => {
     try {
-      const bookData = await FirebaseService.getBookList(10, "Children");
+      const bookData = await FirebaseService.getBookList({
+        limit: 10,
+        category: 'Children',
+      });
       this.setState({bookData});
     } catch (e) {
       __DEV__ && console.log('get book data: ', e);
@@ -86,9 +90,49 @@ class A03 extends Component {
     this.props.navigation.dispatch(DrawerActions.openDrawer());
   };
 
+  handleLoadMore(isFetching) {
+    if (!isFetching) {
+      this.props.getLibrary(10, 'Children', false);
+    }
+  }
+
+  renderFooter = (data, isFetching, error) => {
+    if (isFetching) {
+      return (
+        <ActivityIndicator
+          size={'large'}
+          style={{color: '#000', marginVertical: 10}}
+        />
+      );
+    } else if (!isFetching && data && data.length === 0) {
+      return (
+        <View>
+          <Text style={{color: 'red', alignSelf: 'center', marginVertical: 10}}>
+            No result was found!
+          </Text>
+        </View>
+      );
+    } else if (error) {
+      return (
+        <View>
+          <Text style={{color: 'red', alignSelf: 'center', marginVertical: 10}}>
+            Some error happen!
+          </Text>
+        </View>
+      );
+    }
+    return null;
+  };
+
   render() {
-    const {books, isDrawerOpen, isBottomSheetOpen} = this.props;
-    const {bookData} = this.state;
+    const {
+      books: bookData,
+      isDrawerOpen,
+      isBottomSheetOpen,
+      isFetchingLibrary,
+      errorLibrary,
+    } = this.props;
+    // const {bookData} = this.state;
     return (
       <SafeAreaView
         style={styles.container}
@@ -97,7 +141,7 @@ class A03 extends Component {
         }>
         <View style={headerStyle.header}>
           <View style={headerStyle.titleWrap}>
-            <Text style={headerStyle.title}>Sách của bạn</Text>
+            <Text style={headerStyle.title}>Your Books</Text>
           </View>
           <TouchableOpacity
             onPress={this.openDrawer}
@@ -109,7 +153,7 @@ class A03 extends Component {
           <View style={{flex: 1}} />
           <TouchableOpacity
             accessible={true}
-            accessibilityLabel="Tìm kiếm"
+            accessibilityLabel="Search..."
             onPress={() => this.props.navigation.navigate('A04')}
             style={headerStyle.btn}>
             <Icon name={'search'} size={20} color={'black'} />
@@ -118,17 +162,23 @@ class A03 extends Component {
 
         <View
           style={{paddingHorizontal: 10, flex: 1, backgroundColor: '#F6F9FA'}}>
-          <FlatList
+            <TouchableOpacity onPress={() => this.props.getLibrary(null, null ,null)}>
+              <Text>getBookData</Text>
+            </TouchableOpacity>
+          {/* <FlatList
             data={bookData}
             numColumns={2}
             refreshing={false}
             extraData={bookData}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({item}) => this.renderItem(item)}
-            ListHeaderComponent={
-              <Text style={styles.textHeader}>Thư viện</Text>
+            ListHeaderComponent={<Text style={styles.textHeader}>Library</Text>}
+            ListFooterComponent={() =>
+              this.renderFooter(bookData, isFetchingLibrary, errorLibrary)
             }
-          />
+            onEndReachedThreshold={0.2}
+            onEndReached={() => this.handleLoadMore(isFetchingLibrary)}
+          /> */}
         </View>
       </SafeAreaView>
     );
@@ -138,7 +188,7 @@ class A03 extends Component {
 function mapStateToProps(state) {
   const {playback, author, library, time, drawer, bottomSheet} = state;
   const {error: authorError} = author;
-  const {books} = library;
+  const {books, isFetching: isFetchingLibrary, error: errorLibrary} = library;
   const {isOpen: isDrawerOpen} = drawer;
   const {isOpen: isBottomSheetOpen} = bottomSheet;
   return {
@@ -148,6 +198,8 @@ function mapStateToProps(state) {
     time,
     isDrawerOpen,
     isBottomSheetOpen,
+    isFetchingLibrary,
+    errorLibrary,
   };
 }
 
@@ -155,7 +207,8 @@ function mapDispatchToProps(dispatch) {
   return {
     hidePlayer: () => dispatch(actions.hidePlayer()),
     updatePlayback: chapterId => dispatch(actions.playbackTrack(chapterId)),
-    getLibrary: () => dispatch(actions.getLibraryData()),
+    getLibrary: (limit, category, refresh) =>
+      dispatch(actions.getLibraryData(limit, category, refresh)),
   };
 }
 
