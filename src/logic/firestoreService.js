@@ -13,7 +13,7 @@ class FirebaseService {
     if (!firebase.apps.length) {
         await AudioApp.onReady()
     }
-    this.ref = firebase.firestore().collection('full_data');
+    this.ref = firebase.firestore().collection('books');
   };
 
   getBookList = (limit, category = null) => {
@@ -24,7 +24,8 @@ class FirebaseService {
         }
         ref
         // .where('category', 'array-contains', category)
-        // .startAt("1")
+        .orderBy("book_id")
+        // .startAt("13c7764884b549029e517e14959f5569")
         .limit(limit)
         .get()
         .then(snapshot => {
