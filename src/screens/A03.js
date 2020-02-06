@@ -30,8 +30,7 @@ class A03 extends Component {
   }
 
   componentDidMount() {
-    // this.props.getLibrary(10, 'Children', true);
-    // this.getListBook();
+    this.props.getLibrary(10, 'Children', true);
   }
 
   componentDidUpdate(prevProps) {
@@ -90,11 +89,11 @@ class A03 extends Component {
     this.props.navigation.dispatch(DrawerActions.openDrawer());
   };
 
-  handleLoadMore(isFetching) {
-    if (!isFetching) {
-      this.props.getLibrary(10, 'Children', false);
-    }
-  }
+  // handleLoadMore(isFetching) {
+  //   if (!isFetching) {
+  //     this.props.getLibrary(10, 'Children', false);
+  //   }
+  // }
 
   renderFooter = (data, isFetching, error) => {
     if (isFetching) {
@@ -132,7 +131,6 @@ class A03 extends Component {
       isFetchingLibrary,
       errorLibrary,
     } = this.props;
-    // const {bookData} = this.state;
     return (
       <SafeAreaView
         style={styles.container}
@@ -162,10 +160,7 @@ class A03 extends Component {
 
         <View
           style={{paddingHorizontal: 10, flex: 1, backgroundColor: '#F6F9FA'}}>
-            <TouchableOpacity onPress={() => this.props.getLibrary(null, null ,null)}>
-              <Text>getBookData</Text>
-            </TouchableOpacity>
-          {/* <FlatList
+          <FlatList
             data={bookData}
             numColumns={2}
             refreshing={false}
@@ -176,9 +171,9 @@ class A03 extends Component {
             ListFooterComponent={() =>
               this.renderFooter(bookData, isFetchingLibrary, errorLibrary)
             }
-            onEndReachedThreshold={0.2}
-            onEndReached={() => this.handleLoadMore(isFetchingLibrary)}
-          /> */}
+            // onEndReachedThreshold={0.2}
+            // onEndReached={() => this.handleLoadMore(isFetchingLibrary)}
+          />
         </View>
       </SafeAreaView>
     );

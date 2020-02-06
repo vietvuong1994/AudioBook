@@ -12,26 +12,19 @@ class FirebaseService {
     if (!firebase.apps.length) {
       await AudioApp.onReady();
     }
-    this.ref = firebase.firestore().collection('test_data');
+    this.ref = firebase.firestore().collection('books');
   };
 
   getBookList = ({limit, category, lastId}) => {
-    // lastId = '05cc046d3e384350abab8b195cd00be7';
-    // lastId = '3';
-    limit = 4;
-    category = 'Children';
     console.log('[FIR] GET BOOK QUERY: ', {limit}, {category}, {lastId});
     return new Promise((resolve, reject) => {
       let ref = this.ref;
-      // if (category) {
-      //   ref = this.ref.where('category', 'array-contains', category);
-      // }
-      ref = ref.orderBy('rate', 'desc');
+      if (category) {
+        ref = this.ref.where('category', 'array-contains', category);
+      }
       if (lastId) {
         ref = ref.startAfter(lastId);
-      } else {
-        // ref = ref.orderBy('book_id');
-      }
+      } 
       ref
         .limit(limit)
         .get()
