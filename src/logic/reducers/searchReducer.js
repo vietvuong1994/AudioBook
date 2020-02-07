@@ -10,7 +10,8 @@ const initState = {
   isFetching: false,
   error: null,
   items: [],
-  nextPage: 0,
+  lastId: null,
+  isFetchedAllData: false,
   searchText: ""
 };
 
@@ -28,7 +29,8 @@ function searchReducer(state = initState, action) {
         ...state,
         isFetching: false,
         items: [...currentItems, ...action.items],
-        nextPage: action.nextPage,
+        lastId: action.lastId,
+        isFetchedAllData: action.isFetchedAllData,
         error: null
       };
     case REFRESH_SEARCH_DATA:
@@ -36,7 +38,8 @@ function searchReducer(state = initState, action) {
         ...state,
         isFetching: false,
         items: action.items,
-        nextPage: action.nextPage,
+        lastId: action.lastId,
+        isFetchedAllData: action.isFetchedAllData,
         error: null
       };
     case FETCH_SEARCH_ERROR:

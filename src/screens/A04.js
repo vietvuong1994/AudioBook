@@ -37,20 +37,7 @@ class A04 extends Component {
           Tìm kiếm sách
         </Text>
       ),
-      headerRight: (
-        <View
-          importantForAccessibility={
-            isBottomSheetOpen ? "no-hide-descendants" : "auto"
-          }
-        >
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Filter")}
-            style={headerStyle.btn}
-          >
-            <Text style={headerStyle.search}>Bộ lọc</Text>
-          </TouchableOpacity>
-        </View>
-      ),
+      headerRight: null,
       headerLeft: (
         <View
           importantForAccessibility={
@@ -320,7 +307,7 @@ class A04 extends Component {
   }
 
   renderItem(data) {
-    const { title, authorName, duration, description, id } = data;
+    const { name: title, author: authorName, book_id: id } = data;
     const { downloadingBookData, bookIdDownloaded } = this.props;
     const isDownloaded = bookIdDownloaded.includes(id);
     const isDownloading = downloadingBookData
@@ -334,9 +321,9 @@ class A04 extends Component {
             onPress={() => this.navToDetail(data)}
           >
             <Text style={styles.bookName}>{title}</Text>
-            <Text style={styles.author}>Tác giả: {authorName}</Text>
-            <Text style={styles.length}>Độ dài: {duration}</Text>
-            <Text style={styles.desciption}>{description}</Text>
+            <Text style={styles.author}>Author: {authorName}</Text>
+            {/* <Text style={styles.length}>Độ dài: {duration}</Text> */}
+            {/* <Text style={styles.desciption}>{description}</Text> */}
           </TouchableOpacity>
           <View style={styles.downloadWrap}>
             {this.renderDownloadBtn(isDownloaded, isDownloading, data)}

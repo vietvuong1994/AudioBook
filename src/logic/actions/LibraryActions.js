@@ -50,10 +50,10 @@ const fetchLibraryData = (limit, lastId, category, refresh) => {
           type: FETCH_LIBRARY_SUCCESS,
           books: onlineBook,
           isFetchedAllData: onlineBook.length < limit,
-          // lastId: onlineBook[onlineBook.length - 1]
-          //   ? onlineBook[onlineBook.length - 1].book_id
-          //   : null,
-          lastId: lastDoc ? lastDoc : null,
+          lastId: onlineBook[onlineBook.length - 1]
+            ? onlineBook[onlineBook.length - 1].book_id
+            : null,
+          // lastId: lastDoc ? lastDoc : null,
           refresh,
         });
       } else {

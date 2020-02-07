@@ -3,95 +3,105 @@ import {
   FETCH_SEARCH_SUCCESS,
   FETCH_SEARCH_ERROR,
   REFRESH_SEARCH_DATA,
-  CHANGE_SEARCH_TEXT
-} from "./actionsTypes";
-import * as api from "../../logic/api";
+  CHANGE_SEARCH_TEXT,
+} from './actionsTypes';
+import * as api from '../../logic/api';
+import FirebaseService from '../firestoreService';
 
 const requestSearchData = () => {
   return {
-    type: FETCH_SEARCH_DATA
+    type: FETCH_SEARCH_DATA,
   };
 };
 
-const receiveSearchData = (items, nextPage) => {
+const receiveSearchData = (items, lastId, isFetchedAllData) => {
   return {
     type: FETCH_SEARCH_SUCCESS,
     items,
-    nextPage
+    lastId,
+    isFetchedAllData,
   };
 };
 
-const refreshSearchData = (items, nextPage) => {
+const refreshSearchData = (items, lastId, isFetchedAllData) => {
   return {
     type: REFRESH_SEARCH_DATA,
     items,
-    nextPage
+    lastId,
+    isFetchedAllData,
   };
 };
 
 const fetchSearchError = error => {
   return {
     type: FETCH_SEARCH_ERROR,
-    error
+    error,
   };
 };
 
 export const changeSearchText = searchText => {
   return {
     type: CHANGE_SEARCH_TEXT,
-    searchText
+    searchText,
   };
 };
 
-const fetchSearchData = (refresh, page) => {
+const getOnlineBook = async ({limit, lastId, category, refresh}) => {
+  const onlineBook = await FirebaseService.getBookList({
+    limit,
+    category,
+    lastId: !refresh ? lastId : null,
+  });
+  return onlineBook;
+};
+
+const fetchSearchData = ({ lastId, refresh}) => {
   return async (dispatch, getState) => {
-    dispatch(requestSearchData());
-    const { author, category, speaker, sponsor, search } = getState();
-    const { activeFilter: authorFilter } = author;
-    const { activeFilter: categoryFilter } = category;
-    const { activeFilter: speakerFilter } = speaker;
-    const { activeFilter: sponsorFilter } = sponsor;
-    const searchText = search.searchText.trim();
-    const itemPerPage = 6;
-    const requestPage = refresh ? 0 : page;
-    api
-      .getSearchList(
-        requestPage,
-        itemPerPage,
-        searchText,
-        authorFilter,
-        categoryFilter,
-        speakerFilter,
-        sponsorFilter
-      )
-      .then(response => {
-        const { content } = response.body;
-        const nextPage = content.length < itemPerPage ? null : requestPage + 1;
-        if (refresh) {
-          dispatch(refreshSearchData(content, nextPage));
-        } else {
-          dispatch(receiveSearchData(content, nextPage));
-        }
-      })
-      .catch(error => dispatch(fetchSearchError(error)));
+    try {
+      dispatch(requestSearchData());
+      const {author, category, speaker, sponsor, search} = getState();
+      const {activeFilter: authorFilter} = author;
+      const {activeFilter: categoryFilter} = category;
+      const {activeFilter: speakerFilter} = speaker;
+      const {activeFilter: sponsorFilter} = sponsor;
+      const searchText = search.searchText.trim();
+      const limit = 10;
+      const onlineBookData = await getOnlineBook({
+        limit,
+        lastId,
+        category: categoryFilter,
+        refresh,
+        searchText
+      });
+      const {data: onlineBook, lastDoc} = onlineBookData;
+      const isFetchedAllData = onlineBook.length < limit;
+      const newLastId = onlineBook[onlineBook.length - 1]
+        ? onlineBook[onlineBook.length - 1].book_id
+        : null;
+      if (refresh) {
+        dispatch(receiveSearchData(onlineBook, newLastId, isFetchedAllData))
+      } else {
+        dispatch(refreshSearchData(onlineBook, newLastId, isFetchedAllData))
+      }
+    } catch (error) {
+      dispatch(fetchSearchError(error));
+    }
   };
 };
 
 const shouldFetchSearchData = (state, refresh) => {
-  if (!state) return true;
-  if (state.nextPage === null) {
-    return refresh ? !state.isFetching : false;
-  }
-  if (!state.items) return true;
-  return !state.isFetching;
+  const {isFetching, error, isFetchedAllData} = state;
+  const errorOnFetching = error && !refresh;
+  const shouldFetch = !(isFetching || isFetchedAllData || errorOnFetching);
+  return shouldFetch;
 };
 
-export const fetchSearchDataIfNeed = refresh => {
+export const fetchSearchDataIfNeed = (refresh) => {
   return (dispatch, getState) => {
-    const state = getState().search;
-    const { nextPage } = state;
-    if (shouldFetchSearchData(state, refresh)) {
-      return dispatch(fetchSearchData(refresh, nextPage));
+    const {search} = getState();
+    const {lastId} = search;
+    if (shouldFetchSearchData(search, refresh)) {
+      return dispatch(fetchSearchData({ lastId, refresh}));
     }
   };
 };
