@@ -89,12 +89,6 @@ class A03 extends Component {
     this.props.navigation.dispatch(DrawerActions.openDrawer());
   };
 
-  // handleLoadMore(isFetching) {
-  //   if (!isFetching) {
-  //     this.props.getLibrary(10, 'Children', false);
-  //   }
-  // }
-
   renderFooter = (data, isFetching, error) => {
     if (isFetching) {
       return (
@@ -171,8 +165,6 @@ class A03 extends Component {
             ListFooterComponent={() =>
               this.renderFooter(bookData, isFetchingLibrary, errorLibrary)
             }
-            // onEndReachedThreshold={0.2}
-            // onEndReached={() => this.handleLoadMore(isFetchingLibrary)}
           />
         </View>
       </SafeAreaView>

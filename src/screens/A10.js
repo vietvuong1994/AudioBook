@@ -20,9 +20,6 @@ import * as constants from "../logic/constants";
 import openConnection from "../logic/realm";
 import * as Utils from "../logic/utils";
 
-import schema from "../logic/realm";
-import Realm from "realm";
-
 class A10 extends Component {
   static navigationOptions = ({ navigation }) => {
     const bookData = navigation.getParam("bookData");
@@ -80,21 +77,22 @@ class A10 extends Component {
 
   componentDidMount() {
     const bookData = this.props.navigation.getParam("bookData");
-    const chapterRead = this.props.navigation.getParam("chapterRead");
-    const readSecond = this.props.navigation.getParam("readSecond");
-    this.props.getBookDetail(bookData);
-    const { bookChapter, isFetching } = this.props;
-    if (chapterRead && !isFetching && bookChapter.length > 0) {
-      this.playFromNavigate({
-        chapterId: chapterRead,
-        readSecond,
-        bookId: bookData.id
-      });
-    }
-    const realm = new Realm(schema);
-    this.bookListen = realm.objects("Book").filtered(`id = "${bookData.id}"`);
-    this.setState({ modifiedBook: this.bookListen[0] });
-    this.bookListen.addListener(this.listener);
+    Utils.saveBookToLocalIfNeed(bookData)
+    // const chapterRead = this.props.navigation.getParam("chapterRead");
+    // const readSecond = this.props.navigation.getParam("readSecond");
+    // this.props.getBookDetail(bookData);
+    // const { bookChapter, isFetching } = this.props;
+    // if (chapterRead && !isFetching && bookChapter.length > 0) {
+    //   this.playFromNavigate({
+    //     chapterId: chapterRead,
+    //     readSecond,
+    //     bookId: bookData.id
+    //   });
+    // }
+    // const realm = new Realm(schema);
+    // this.bookListen = realm.objects("Book").filtered(`id = "${bookData.id}"`);
+    // this.setState({ modifiedBook: this.bookListen[0] });
+    // this.bookListen.addListener(this.listener);
   }
 
   componentDidUpdate(prevProps) {
@@ -129,9 +127,9 @@ class A10 extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.bookListen.removeAllListeners();
-  }
+  // componentWillUnmount() {
+  //   this.bookListen.removeAllListeners();
+  // }
 
   listener = (books, changes) => {
     // Update UI in response to modified objects

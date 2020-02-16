@@ -6,20 +6,9 @@ class Chapter extends Realm.Object {}
 Chapter.schema = {
   name: "Chapter",
   properties: {
-    id: "int?",
-    index: "int?",
+    mp3: "string?",
     name: "string?",
-    title: "string?",
-    album: "string?",
-    artist: "string?",
-    artwork: "string?",
-    audioUrl: "string?",
-    bookId: "int?",
-    created: "int?",
-    duration: "string?",
-    isDownloaded: "bool?",
-    read: "int?",
-    url: "string?"
+    isDownloaded: "bool?"
   }
 };
 
@@ -28,25 +17,15 @@ Book.schema = {
   name: "Book",
   properties: {
     id: "int?",
-    title: "string?",
-    authorId: "int?",
-    authorName: "string?",
-    avatar: "string?",
-    categoryId: "int?",
-    categoryName: "string?",
-    created: "int?",
-    creator: "string?",
-    creatorName: "string?",
-    description: "string?",
-    duration: "string?",
-    speakerId: "int?",
-    speakerName: "string?",
-    sponsorId: "int?",
-    isDownloaded: "bool?",
-    sponsorName: "string?",
-    read: "int?",
-    downloadAt: "int?",
-    chapters: { type: "list", objectType: "Chapter" }
+    name: "string?",
+    author: "string?",
+    summary: "string?",
+    rate: "string?",
+    cover: "string?",
+    cover_small: "string?",
+    book_id: "string?",
+    url: "string?",
+    media_data: { type: "list", objectType: "Chapter" }
   }
 };
 

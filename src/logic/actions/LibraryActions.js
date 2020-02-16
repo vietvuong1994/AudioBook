@@ -21,7 +21,7 @@ const fetchLibraryFail = error => {
 
 const getLocalBooks = async () => {
   const realm = await openConnection();
-  return realm.objects('Book').filtered(`isDownloaded = true`);
+  return realm.objects('Book')
 };
 
 const getOnlineBook = async ({limit, lastId, category, refresh}) => {
@@ -66,7 +66,6 @@ const fetchLibraryData = (limit, lastId, category, refresh) => {
         });
       }
     } catch (e) {
-      console.log('[ACTION] GET BOOK ERROR: ', e);
       dispatch(fetchLibraryFail(e));
     }
   };

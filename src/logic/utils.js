@@ -143,6 +143,38 @@ export const updateReadTime = (bookId, chapterId, time) => {
   });
 };
 
+export const getLocalBookData = async (bookId) => {
+  try{
+    const realm = await openConnection();
+    const bookData = realm.objects("Book").filtered(`id = "${bookId}"`).snapshot();
+    return bookData
+  }catch(error){
+    return {error}
+  }  
+}
+
+export const saveBookToLocalIfNeed = async (bookData) => {
+  try{
+    const bookId = bookData.book_id ? bookData.book_id : bookData.id
+    const realm = await openConnection();
+    const isLocalBook = realm.objects("Book").filtered(`book_id = "${bookId}"`).snapshot();
+    if(isLocalBook.length == 0){
+      realm.write(() => {
+        realm.create('Book', {
+          ...bookData
+        });
+      });
+      __DEV__ && console.log("[DB]Save book success")
+    }else{
+      __DEV__ && console.log("[DB]Book already saved")
+    }
+  }catch(error){
+    __DEV__ && console.log("[DB]Save book error: ",error)
+    return {error}
+  }
+  
+}
+
 export const getActiveRouteName = navigationState => {
   if (!navigationState) {
     return null;
